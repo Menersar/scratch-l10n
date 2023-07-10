@@ -1,7 +1,7 @@
 {
     "name": "sidekick-l10n",
     "version": "3.15.0",
-    "description": "Localization for the Scratch 3.0 components; customized version for Sidekick.",
+    "description": "Localization for the Scratch 3.0 components; version customized for Sidekick.",
     "main": "./dist/l10n.js",
     "browser": "./src/index.js",
     "bin": {
