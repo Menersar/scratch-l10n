@@ -1,6 +1,6 @@
 {
     "name": "sidekick-l10n",
-    "version": "3.15.0",
+    "version": "3.16.0",
     "description": "Localization for the Scratch 3.0 components; version customized for Sidekick.",
     "main": "./dist/l10n.js",
     "browser": "./src/index.js",
@@ -33,13 +33,16 @@
         "validate:interface": "babel-node scripts/validate-translations ./editor/interface/",
         "validate:paint": "babel-node scripts/validate-translations ./editor/paint-editor/",
         "validate:editor": "npm run validate:blocks && npm run validate:extensions && npm run validate:interface && npm run validate:paint",
-        "validate:www": "babel-node scripts/validate-www ./www"
+        "validate:www": "babel-node scripts/validate-www ./www",
+        "pull:sidekick": "babel-node scripts/sidekick-pull.js",
+        "push:sidekick": "babel-node scripts/sidekick-push.js",
+        "publish:sidekick": "./scripts/sidekick-publish.sh"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Menersar/scratch-l10n.git"
     },
-    "author": "Massachusetts Institute of Technology",
+    "author": "Massachusetts Institute of Technology, Maite-Aileen Brandt",
     "license": "BSD-3-Clause",
     "bugs": {
         "url": "https://github.com/Menersar/scratch-l10n/issues"
@@ -81,6 +84,7 @@
         "p-queue": "3.0.0",
         "rimraf": "^2.6.2",
         "webpack": "^4.6.0",
-        "webpack-cli": "^3.1.2"
+        "webpack-cli": "^3.1.2",
+        "yaml": "^2.2.1"
     }
 }

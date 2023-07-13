@@ -43,6 +43,7 @@ import * as path from 'path';
 import {sync as mkdirpSync} from 'mkdirp';
 import defaultsDeep from 'lodash.defaultsdeep';
 import locales from '../src/supported-locales.js';
+import sidekickLocalesIdsList from './sidekick-locales-ids-list.json';
 
 const MSGS_DIR = './locales/';
 mkdirpSync(MSGS_DIR);
@@ -54,7 +55,13 @@ const combineJson = (component) => {
             let langData = JSON.parse(
                 fs.readFileSync(path.resolve('editor', component, lang + '.json'), 'utf8')
             );
-            collection[lang] = langData;
+            // If an ID is not listed in file "sidekick-locales-ids-list.json" the entry with the same key is removed from the langData collection variable.
+            // The list contains all IDs of entities that require a translation. So if an ID is not listed, no translation is required and the langData entry can (and should) be removed.
+            for (const key of Object.keys(langData)) {
+                if (!sidekickLocalesIdsList.includes(key)) {
+                    delete langData[key];
+                }
+            }            collection[lang] = langData;
         } catch (e) {
             missingLocales.push(component + ':' + lang + '\n');
         }
