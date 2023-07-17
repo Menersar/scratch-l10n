@@ -1,9 +1,6 @@
 module.exports = {
-    extends: ['scratch', 'scratch/node'],
-    env: {
-        es6: true
-    },
-    plugins: [
-        'prettier',
-      ],
+  extends: ["scratch", "scratch/node"],
+  env: {
+    es6: true,
+  },
 };
