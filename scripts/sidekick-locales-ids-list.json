@@ -360,6 +360,7 @@
   "gui.spriteSelectorItem.contextMenuDuplicate",
   "gui.spriteSelectorItem.contextMenuExport",
   "gui.spriteSelectorItem.rename",
+  "gui.spriteSelectorItem.contextMenuInspect",
   "gui.stageHeader.fullscreenControl",
   "gui.stageHeader.stageSizeFull",
   "gui.stageHeader.stageSizeLarge",
