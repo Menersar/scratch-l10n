@@ -143,7 +143,7 @@ const allStrings = {
 
 const allMessageIds = Object.keys(allStrings).sort();
 fs.writeFileSync(
-    pathUtil.join(__dirname, 'sidekick-locales-ids-list.json'),
+    pathUtil.join(__dirname, 'sidekick-all-used-ids.json'),
     JSON.stringify(allMessageIds, null, 4)
 );
 

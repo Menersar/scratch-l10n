@@ -3,7 +3,7 @@
 import pathUtil from 'node:path';
 import fs from 'node:fs';
 import {txPull, txGetResourceStatistics} from '../lib/transifex';
-import {supportedLocales, scratchToTransifex} from './sidekick-locales';
+import {supportedLocales, scratchToTransifex} from './tw-locales';
 import {batchMap} from '../lib/batch.js';
 
 /* eslint-disable valid-jsdoc */
@@ -224,7 +224,7 @@ const pullGui = async () => {
         return;
     }
 
-    const guiTranslationsFile = pathUtil.join(scratchGui, 'src/lib/sidekick-translations/generated-translations.json');
+    const guiTranslationsFile = pathUtil.join(scratchGui, 'src/lib/tw-translations/generated-translations.json');
     // These translations build upon scratch-l10n, so the threshold should be 0.
     const guiTranslations = await pullResource('guijson', 0);
     fs.writeFileSync(guiTranslationsFile, JSON.stringify(guiTranslations, null, 4));
@@ -273,15 +273,13 @@ const pullPackager = async () => {
 };
 
 const pullDesktop = async () => {
-    const desktop = pathUtil.join(__dirname, '../../sidekick-desktop');
+    const desktop = pathUtil.join(__dirname, '../../turbowarp-desktop');
     if (!isDirectorySync(desktop)) {
-        console.log('Skipping desktop; could not find sidekick-desktop.');
+        console.log('Skipping desktop; could not find turbowarp-desktop.');
         return;
     }
 
     // Desktop app translations
-    // const desktopTranslations = await pullResource('desktopjson', 0.5);
-    // !!! ???
     const desktopTranslations = await pullResource('desktopnewjson', 0.5);
     fs.writeFileSync(
         pathUtil.join(desktop, 'src-main/l10n/generated-translations.json'),
@@ -310,7 +308,6 @@ const pullDesktop = async () => {
         );
     fs.writeFileSync(indexHtml, newContent);
 
-    // !!! SK?! ???
     const storeListings = await pullResource('store-listingsyaml', 1);
     fs.writeFileSync(
         pathUtil.join(desktop, 'store-listings/imported.json'),

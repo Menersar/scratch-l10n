@@ -43,7 +43,7 @@ import * as path from 'path';
 import {sync as mkdirpSync} from 'mkdirp';
 import defaultsDeep from 'lodash.defaultsdeep';
 import locales from '../src/supported-locales.js';
-import sidekickLocalesIdsList from './sidekick-locales-ids-list.json';
+import sidekickLocalesIdsList from './sidekick-all-used-ids.json';
 
 const MSGS_DIR = './locales/';
 mkdirpSync(MSGS_DIR);
