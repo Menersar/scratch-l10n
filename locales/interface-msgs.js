@@ -1986,6 +1986,8 @@ export default {
     "gui.extension.text2speech.description": "Make your projects talk.",
     "gui.extension.translate.name": "Translate",
     "gui.extension.translate.description": "Translate text into many languages.",
+    "gui.extension.pigpio.name": "Raspberry Pi GPIO",
+    "gui.extension.pigpio.description": "Control Raspberry Pi GPIO lines.",
     "gui.extension.makeymakey.description": "Make anything into a key.",
     "gui.extension.microbit.description": "Layihələrinizi dünyayla paylaşın.",
     "gui.extension.microbit.connectingMessage": "Qoşulur",
